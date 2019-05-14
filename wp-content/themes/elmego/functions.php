@@ -66,3 +66,24 @@ add_action('wp_enqueue_scripts', 'mego_add_styles');
 add_action('wp_enqueue_scripts', 'mego_add_scripts');
 
 add_action('init', 'mego_register_custom_menu');
+
+function numbering_pagination() {
+
+	global $wp_query;
+
+	$all_pages = $wp_query->max_num_pages;
+
+	$current_page = max(1, get_query_var('paged'));
+
+	if ($all_pages > 1) {
+		return paginate_links([
+
+			'base' => get_pagenum_link(1) . '%_%',
+			'format' => 'page/%#%',
+			'current' => $current_page,
+			'mid_size' => 1,
+
+		]);
+	}
+
+}

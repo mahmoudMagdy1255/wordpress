@@ -4,6 +4,29 @@
 
 	<div class="row">
 
+		<div class="category-information text-center ">
+
+			<div class="col-md-4">
+
+				<h1 class="category-title"><?php single_cat_title();?></h1>
+
+			</div>
+
+
+			<div class="col-md-4">
+				<p class="category-description"><?=category_description();?></p>
+			</div>
+
+
+			<div class="col-md-4">
+
+				<div class="cat-stats">
+					<span>Articles Count: 20</span>
+					<span>Comments Count: 100</span>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
 <?php
 
 if (have_posts()) {
@@ -40,7 +63,6 @@ if (have_posts()) {
 					<?=comments_popup_link('0 Comments', 'One Comments', '% Comments', 'comment-url', 'Comments Disabled')?>
 				</span>
 
-				<?=the_post_thumbnail('thumbnail', ['class' => 'img-responsive img-thumbnail', 'title' => 'post title'])?>
 
 				<div class="post-content"><?=the_excerpt()?></div>
 
@@ -52,21 +74,6 @@ if (have_posts()) {
 
 				</p>
 
-				<p class="post-tags">
-
-
-					<?php
-if (has_tag()) {
-
-			the_tags();
-
-		} else {
-			echo "Tags: \nThere Are No Tags";
-
-		}
-		?>
-
-				</p>
 
 			</div>
 		</div>

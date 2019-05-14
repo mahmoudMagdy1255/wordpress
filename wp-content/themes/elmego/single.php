@@ -66,8 +66,57 @@ if (has_tag()) {
 	}
 
 }
+
 echo "<div class='clearfix'></div>";
+
+$random_posts_args = [
+	'posts_per_page' => 5,
+	'orderby' => 'rand',
+	'category__in' => wp_get_post_categories(get_queried_object_id()),
+	'post__not_in' => [get_queried_object_id()],
+];
+
+$random_posts = new WP_Query($random_posts_args);
+
+if ($random_posts->have_posts()) {
+
+	while ($random_posts->have_posts()) {
+
+		$random_posts->the_post();
+		?>
+
+	<div class="author-posts">
+		<div class="col-sm-3">
+			<?=the_post_thumbnail('thumbnail', ['class' => 'img-responsive img-thumbnail', 'title' => 'post title'])?>
+
+		</div>
+
+		<div class="col-sm-9">
+
+				<h3 class="post-title">
+
+					<a href="<?=the_permalink()?>">
+						<?=the_title()?>
+					</a>
+
+				</h3>
+
+				<hr>
+
+		</div>
+	</div>
+
+<?php
+
+	}
+
+}
+
+wp_reset_postdata();
+
 ?>
+
+
 
 <div class="author-area">
 
