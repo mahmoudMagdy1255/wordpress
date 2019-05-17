@@ -474,3 +474,39 @@ margin-top: 50px;
 	line-height: 80px;
 	color: #a9a9a9;
 }
+
+.web-category .post-title{
+
+	margin-top: 30px !important;
+
+}
+
+.web-category .post-content{
+
+	margin-top: 8px;
+
+}
+
+.sidebar-web{
+
+}
+
+.sidebar-web .widget{
+	background-color: #FFF;
+	border: 1px solid #d8d8d8;
+	margin-bottom: 15px;
+}
+
+.sidebar-web .widget-title{
+	margin: 0;
+	padding: 10px;
+	background-color: #42a4d0;
+	color: #FFF;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.sidebar-web .widget-content{
+	padding: 10px;
+	color: #969696;
+}

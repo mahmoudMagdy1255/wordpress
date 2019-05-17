@@ -87,3 +87,26 @@ function numbering_pagination() {
 	}
 
 }
+
+function elmego_main_sidebar() {
+
+	/**
+	 * Creates a sidebar
+	 * @param string|array  Builds Sidebar based off of 'name' and 'id' values.
+	 */
+	$args = array(
+		'name' => 'Main Sidebar',
+		'id' => 'main-sidebar',
+		'description' => 'Main Sidebar',
+		'class' => 'main-sidebar',
+		'before_widget' => '<div class="widget-content">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	);
+
+	register_sidebar($args);
+
+}
+
+add_action('widgets_init', 'elmego_main_sidebar');
