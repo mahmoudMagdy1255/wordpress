@@ -110,3 +110,11 @@ function elmego_main_sidebar() {
 }
 
 add_action('widgets_init', 'elmego_main_sidebar');
+
+function remove_paragraph($content) {
+	remove_filter('the_content', 'wpautop');
+
+	return $content;
+}
+
+add_filter('the_content', 'remove_paragraph', 0);

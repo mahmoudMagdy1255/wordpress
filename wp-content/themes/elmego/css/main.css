@@ -5,6 +5,7 @@ body{
 .navbar
 {
 	border-radius: 0;
+	margin-bottom: 0;
 }
 
 
@@ -509,4 +510,15 @@ margin-top: 50px;
 .sidebar-web .widget-content{
 	padding: 10px;
 	color: #969696;
+}
+
+.breadcrumb-holder{
+	background-color: #f5f5f5;
+	margin-bottom: 10px;
+}
+
+
+.breadcrumb-holder .breadcrumb{
+	margin-bottom: 0;
+	padding: 15px;
 }
